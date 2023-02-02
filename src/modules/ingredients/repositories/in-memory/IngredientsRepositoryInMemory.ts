@@ -27,6 +27,10 @@ class IngredientsRepositoryInMemory implements IIngredientsRepository {
   async findByName(name: string): Promise<Ingredient> {
     return this.ingredients.find((ingredient) => ingredient.name === name);
   }
+
+  async findById(id: string): Promise<Ingredient> {
+    return this.ingredients.find((ingredient) => ingredient.id === id);
+  }
 }
 
 export { IngredientsRepositoryInMemory };
