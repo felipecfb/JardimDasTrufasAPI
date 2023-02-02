@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { container } from 'tsyringe';
+import { container } from "tsyringe";
 
 import { AuthenticateUserUseCase } from "./AuthenticateUserUseCase";
 
@@ -13,6 +13,6 @@ class AuthenticateUserController {
 
     return res.status(200).json(token);
   }
-};
+}
 
 export { AuthenticateUserController };

@@ -1,4 +1,5 @@
 import { Repository } from "typeorm";
+
 import { AppDataSource } from "../../../database/data-source";
 import { User } from "../../../database/entities/account/User";
 import { IUsersRepository } from "./IUsersRepository";
@@ -14,7 +15,7 @@ class UsersRepository implements IUsersRepository {
     const user = this.repository.create({
       name,
       email,
-      password
+      password,
     });
 
     await this.repository.save(user);
@@ -22,9 +23,9 @@ class UsersRepository implements IUsersRepository {
 
   async findByEmail(email: string): Promise<User> {
     console.log("email");
-    
+
     const user = await this.repository.findOneBy({
-      email
+      email,
     });
 
     return user;

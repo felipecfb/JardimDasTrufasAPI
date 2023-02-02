@@ -1,5 +1,6 @@
 import { hash } from "bcryptjs";
-import { inject,injectable } from "tsyringe";
+import { inject, injectable } from "tsyringe";
+
 import { IUsersRepository } from "../../repositories/IUsersRepository";
 
 @injectable()
@@ -21,7 +22,7 @@ class CreateUserUseCase {
     await this.usersRepository.create({
       name,
       email,
-      password: passwordHash
+      password: passwordHash,
     });
   }
 }

@@ -1,4 +1,5 @@
 import { Router } from "express";
+
 import { authenticateRoutes } from "./authenticate.routes";
 import { usersRoutes } from "./user.routes";
 
