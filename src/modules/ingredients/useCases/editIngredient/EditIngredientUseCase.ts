@@ -1,5 +1,6 @@
 import { Ingredient } from "@database/entities/ingredient/Ingredient";
 import { IIngredientsRepository } from "@modules/ingredients/repositories/IIngredientsRepository";
+import { AppError } from "errors/AppError";
 import { inject, injectable } from "tsyringe";
 
 interface IRequest {
@@ -25,7 +26,7 @@ class EditIngredientUseCase {
     const ingredient = await this.ingredientsRepository.findById(id);
 
     if (!ingredient) {
-      throw new Error("This ingredient not exists");
+      throw new AppError("This ingredient not exists");
     }
 
     const updatedIngredient = await this.ingredientsRepository.update(id, { name, description, approximatedPrice })

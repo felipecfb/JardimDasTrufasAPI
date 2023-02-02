@@ -1,6 +1,7 @@
 import { Ingredient } from "@database/entities/ingredient/Ingredient";
 import { ICreateIngredientDTO } from "@modules/ingredients/dtos";
 import { IIngredientsRepository } from "@modules/ingredients/repositories/IIngredientsRepository";
+import { AppError } from "errors/AppError";
 import { inject, injectable } from "tsyringe";
 
 @injectable()
@@ -20,7 +21,7 @@ class CreateIngredientUseCase {
     );
 
     if (ingredientAlreadyExists) {
-      throw new Error("Ingredient already exists");
+      throw new AppError("Ingredient already exists");
     }
 
     const ingredient = await this.ingredientsRepository.create({

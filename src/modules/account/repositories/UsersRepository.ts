@@ -1,5 +1,6 @@
 import { AppDataSource } from "@database/data-source";
 import { User } from "@database/entities/account/User";
+import { AppError } from "errors/AppError";
 import { Repository } from "typeorm";
 
 import { IUsersRepository } from "./IUsersRepository";
@@ -30,7 +31,7 @@ class UsersRepository implements IUsersRepository {
   }
 
   async findById(id: string): Promise<User> {
-    throw new Error("Method not implemented.");
+    throw new AppError("Method not implemented.");
   }
 }
 
