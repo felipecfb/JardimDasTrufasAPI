@@ -1,4 +1,5 @@
-import { User } from "../../../../database/entities/account/User";
+import { User } from "@database/entities/account/User";
+
 import { IUsersRepository } from "../IUsersRepository";
 
 class UsersRepositoryInMemory implements IUsersRepository {

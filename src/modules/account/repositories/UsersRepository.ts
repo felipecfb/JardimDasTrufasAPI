@@ -1,7 +1,7 @@
+import { AppDataSource } from "@database/data-source";
+import { User } from "@database/entities/account/User";
 import { Repository } from "typeorm";
 
-import { AppDataSource } from "../../../database/data-source";
-import { User } from "../../../database/entities/account/User";
 import { IUsersRepository } from "./IUsersRepository";
 
 class UsersRepository implements IUsersRepository {
@@ -22,8 +22,6 @@ class UsersRepository implements IUsersRepository {
   }
 
   async findByEmail(email: string): Promise<User> {
-    console.log("email");
-
     const user = await this.repository.findOneBy({
       email,
     });

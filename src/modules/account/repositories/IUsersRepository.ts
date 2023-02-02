@@ -1,4 +1,4 @@
-import { User } from "../../../database/entities/account/User";
+import { User } from "@database/entities/account/User";
 
 interface IUsersRepository {
   create(data: ICreateUserDTO): Promise<void>;

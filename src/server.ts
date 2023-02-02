@@ -1,6 +1,6 @@
+import { AppDataSource } from "@database/data-source";
 import express from "express";
 
-import { AppDataSource } from "./database/data-source";
 import { router } from "./routes";
 
 import "./container";

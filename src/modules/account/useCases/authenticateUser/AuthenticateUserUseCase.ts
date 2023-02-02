@@ -1,8 +1,7 @@
+import { IUsersRepository } from "@modules/account/repositories/IUsersRepository";
 import { compare } from "bcryptjs";
 import { sign } from "jsonwebtoken";
 import { inject, injectable } from "tsyringe";
-
-import { IUsersRepository } from "../../repositories/IUsersRepository";
 
 interface IRequest {
   email: string;
@@ -26,8 +25,6 @@ class AuthenticateUserUseCase {
 
   async execute({ email, password }: IRequest): Promise<IResponse> {
     const user = await this.usersRepository.findByEmail(email);
-
-    console.log(user);
 
     if (!user) {
       throw new Error("Email or password incorrect!");
