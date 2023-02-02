@@ -1,6 +1,8 @@
-import express, { Request, Response } from "express";
+import express from "express";
 import { AppDataSource } from "./database/data-source";
 import { router } from "./routes";
+
+import "./container"
 
 const PORT = process.env.port || 3333;
 

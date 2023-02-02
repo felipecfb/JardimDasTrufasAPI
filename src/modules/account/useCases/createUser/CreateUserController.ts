@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { UsersRepository } from "../../repositories/UsersRepository";
-import { CreateUserUseCase } from "./CreateUserUseCases";
+import { CreateUserUseCase } from "./CreateUserUseCase";
 
 class CreateUserController {
   async handle(req: Request, res: Response) {

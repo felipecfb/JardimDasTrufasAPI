@@ -21,11 +21,13 @@ class UsersRepository implements IUsersRepository {
   }
 
   async findByEmail(email: string): Promise<User> {
-    const user = this.repository.findOneBy({
+    console.log("email");
+    
+    const user = await this.repository.findOneBy({
       email
     });
 
-    return user
+    return user;
   }
 
   async findById(id: string): Promise<User> {
