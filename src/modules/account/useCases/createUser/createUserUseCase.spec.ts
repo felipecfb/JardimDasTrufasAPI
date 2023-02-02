@@ -1,17 +1,23 @@
-import { describe, it, beforeEach } from "vitest";
+import { describe, it, beforeEach, expect } from "vitest";
 import { UsersRepositoryInMemory } from "../../repositories/in-memory/UsersRepositoryInMemory";
-import { IUsersRepository } from "../../repositories/IUsersRepository";
 import { CreateUserUseCase } from "./CreateUserUseCases";
 
-let usersRepositoryInMemory: IUsersRepository;
 let createUserUseCase: CreateUserUseCase;
+let usersRepositoryInMemory: UsersRepositoryInMemory;
 
-describe("Create Account", () => {
+describe("Create User", () => {
   beforeEach(() => {
     usersRepositoryInMemory = new UsersRepositoryInMemory();
-  })
+    createUserUseCase = new CreateUserUseCase(usersRepositoryInMemory);
+  });
 
-  it("should be able to create an account", () => {
-    
+  it("should be able to create an user", async () => {
+    const user = await createUserUseCase.execute({
+      name: "Test name",
+      email: "test@test.com",
+      password: "teste123"
+    });
+
+    expect(user).toHaveProperty("id");
   })
 })
