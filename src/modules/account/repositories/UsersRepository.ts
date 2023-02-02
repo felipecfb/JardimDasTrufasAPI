@@ -25,7 +25,7 @@ class UsersRepository implements IUsersRepository {
       email
     });
 
-    return user;
+    return user
   }
 
   async findById(id: string): Promise<User> {
