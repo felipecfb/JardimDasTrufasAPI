@@ -16,8 +16,8 @@ export class Ingredient {
   @Column({ type: "varchar", nullable: false })
   description: string;
 
-  @Column({ type: "varchar", nullable: false })
-  approximatePrice: string;
+  @Column({ type: "float", nullable: false })
+  approximatedPrice: number;
 
   @CreateDateColumn({
     type: "timestamp",
