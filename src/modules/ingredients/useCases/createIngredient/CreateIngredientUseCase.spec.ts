@@ -23,4 +23,20 @@ describe("Create Ingredient", () => {
 
     expect(ingredient).toHaveProperty("name");
   });
+
+  it("should not be able to create a new ingredient with exists the same name", () => {
+    expect(async () => {
+      await createIngredientUseCase.execute({
+        name: "Test ingredient",
+        description: "Description one",
+        approximatedPrice: 5.5,
+      });
+
+      await createIngredientUseCase.execute({
+        name: "Test ingredient",
+        description: "Description two",
+        approximatedPrice: 5.5,
+      });
+    }).rejects.toBeInstanceOf(Error);
+  });
 });
