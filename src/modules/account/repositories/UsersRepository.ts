@@ -1,6 +1,5 @@
 import { AppDataSource } from "@database/data-source";
 import { User } from "@database/entities/account/User";
-import { AppError } from "errors/AppError";
 import { Repository } from "typeorm";
 
 import { ICreateUserDTO } from "../dtos/ICreateUserDTO";
@@ -32,7 +31,9 @@ class UsersRepository implements IUsersRepository {
   }
 
   async findById(id: string): Promise<User> {
-    throw new AppError("Method not implemented.");
+    const user = await this.repository.findOneBy({ id });
+
+    return user;
   }
 }
 
