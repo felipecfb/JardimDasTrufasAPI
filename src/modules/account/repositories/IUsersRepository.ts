@@ -1,4 +1,4 @@
-import { User } from "shared/infra/typeorm/database/entities/account/User";
+import { User } from "@shared/infra/typeorm/database/entities/account/User";
 
 import { ICreateUserDTO } from "../dtos/ICreateUserDTO";
 

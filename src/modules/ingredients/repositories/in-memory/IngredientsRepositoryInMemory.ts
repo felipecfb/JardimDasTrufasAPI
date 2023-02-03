@@ -2,7 +2,8 @@ import {
   ICreateIngredientDTO,
   IEditIngredientDTO,
 } from "@modules/ingredients/dtos";
-import { Ingredient } from "shared/infra/typeorm/database/entities/ingredient/Ingredient";
+
+import { Ingredient } from "@shared/infra/typeorm/database/entities/ingredient/Ingredient";
 
 import { IIngredientsRepository } from "../IIngredientsRepository";
 

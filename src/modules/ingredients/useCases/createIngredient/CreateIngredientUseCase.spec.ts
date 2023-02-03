@@ -1,6 +1,8 @@
-import { IngredientsRepositoryInMemory } from "@modules/ingredients/repositories/in-memory/IngredientsRepositoryInMemory";
 import { describe, it, beforeEach, expect } from "vitest";
 
+import { AppError } from "@shared/errors/AppError";
+
+import { IngredientsRepositoryInMemory } from "../../repositories/in-memory/IngredientsRepositoryInMemory";
 import { CreateIngredientUseCase } from "./CreateIngredientUseCase";
 
 let createIngredientUseCase: CreateIngredientUseCase;
@@ -37,6 +39,6 @@ describe("Create Ingredient", () => {
         description: "Description two",
         approximatedPrice: 5.5,
       });
-    }).rejects.toBeInstanceOf(Error);
+    }).rejects.toBeInstanceOf(AppError);
   });
 });

@@ -1,8 +1,9 @@
 import "express-async-errors";
 import express, { NextFunction, Request, Response } from "express";
-import { AppError } from "shared/errors/AppError";
 
 import "../../container";
+import { AppError } from "@shared/errors/AppError";
+
 import { AppDataSource } from "../typeorm/database/data-source";
 import { router } from "./routes";
 

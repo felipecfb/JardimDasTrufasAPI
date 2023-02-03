@@ -1,8 +1,9 @@
 import { ICreateIngredientDTO } from "@modules/ingredients/dtos";
 import { IIngredientsRepository } from "@modules/ingredients/repositories/IIngredientsRepository";
-import { AppError } from "shared/errors/AppError";
-import { Ingredient } from "shared/infra/typeorm/database/entities/ingredient/Ingredient";
 import { inject, injectable } from "tsyringe";
+
+import { AppError } from "@shared/errors/AppError";
+import { Ingredient } from "@shared/infra/typeorm/database/entities/ingredient/Ingredient";
 
 @injectable()
 class CreateIngredientUseCase {

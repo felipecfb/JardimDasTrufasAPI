@@ -6,6 +6,7 @@ export default defineConfig({
     alias: {
       "@modules": path.resolve(__dirname, './src/modules'),
       "@database": path.resolve(__dirname, './src/database'),
+      "@shared": path.resolve(__dirname, './src/shared'),
     },
   },
 });

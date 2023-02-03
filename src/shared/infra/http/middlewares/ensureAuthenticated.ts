@@ -1,7 +1,8 @@
 import { UsersRepository } from "@modules/account/repositories/UsersRepository";
 import { NextFunction, Request, Response } from "express";
 import { verify } from "jsonwebtoken";
-import { AppError } from "shared/errors/AppError";
+
+import { AppError } from "@shared/errors/AppError";
 
 interface IPayload {
   sub: string;
@@ -39,8 +40,6 @@ export async function ensureAuthenticated(
 
     next();
   } catch (err) {
-    console.log(err);
-
     throw new AppError("Invalid token!");
   }
 }

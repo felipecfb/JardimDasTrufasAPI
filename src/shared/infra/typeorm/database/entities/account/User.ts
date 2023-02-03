@@ -4,6 +4,7 @@ import {
   Column,
   CreateDateColumn,
 } from "typeorm";
+import { v4 as uuidV4 } from "uuid";
 
 @Entity("users")
 export class User {
@@ -34,4 +35,10 @@ export class User {
     onUpdate: "CURRENT_TIMESTAMP(6)",
   })
   updated_at: Date;
+
+  constructor() {
+    if (!this.id) {
+      this.id = uuidV4();
+    }
+  }
 }
