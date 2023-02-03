@@ -15,7 +15,7 @@ class EditIngredientUseCase {
   constructor(
     @inject("IngredientsRepository")
     private ingredientsRepository: IIngredientsRepository
-  ) { }
+  ) {}
 
   async execute({
     id,
@@ -29,7 +29,12 @@ class EditIngredientUseCase {
       throw new AppError("This ingredient not exists");
     }
 
-    const updatedIngredient = await this.ingredientsRepository.update(id, { name, description, approximatedPrice })
+    const updatedIngredient = await this.ingredientsRepository.update({
+      id,
+      name,
+      description,
+      approximatedPrice,
+    });
 
     return updatedIngredient;
   }

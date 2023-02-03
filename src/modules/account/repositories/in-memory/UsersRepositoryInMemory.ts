@@ -1,4 +1,5 @@
 import { User } from "@database/entities/account/User";
+import { ICreateUserDTO } from "@modules/account/dtos/ICreateUserDTO";
 
 import { IUsersRepository } from "../IUsersRepository";
 

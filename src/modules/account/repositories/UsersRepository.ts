@@ -3,6 +3,7 @@ import { User } from "@database/entities/account/User";
 import { AppError } from "errors/AppError";
 import { Repository } from "typeorm";
 
+import { ICreateUserDTO } from "../dtos/ICreateUserDTO";
 import { IUsersRepository } from "./IUsersRepository";
 
 class UsersRepository implements IUsersRepository {

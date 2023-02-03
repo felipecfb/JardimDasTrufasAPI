@@ -1,9 +1,20 @@
 import { Ingredient } from "@database/entities/ingredient/Ingredient";
-import { ICreateIngredientDTO } from "@modules/ingredients/dtos";
+import {
+  ICreateIngredientDTO,
+  IEditIngredientDTO,
+} from "@modules/ingredients/dtos";
 
 import { IIngredientsRepository } from "../IIngredientsRepository";
 
 class IngredientsRepositoryInMemory implements IIngredientsRepository {
+  update({
+    id,
+    name,
+    description,
+    approximatedPrice,
+  }: IEditIngredientDTO): Promise<Ingredient> {
+    throw new Error("Method not implemented.");
+  }
   ingredients: Ingredient[] = [];
 
   async create({

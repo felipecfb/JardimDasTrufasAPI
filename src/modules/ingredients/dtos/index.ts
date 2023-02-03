@@ -4,4 +4,11 @@ interface ICreateIngredientDTO {
   approximatedPrice: number;
 }
 
-export { ICreateIngredientDTO };
+interface IEditIngredientDTO {
+  id: string;
+  name: string;
+  description: string;
+  approximatedPrice: number;
+}
+
+export { ICreateIngredientDTO, IEditIngredientDTO };

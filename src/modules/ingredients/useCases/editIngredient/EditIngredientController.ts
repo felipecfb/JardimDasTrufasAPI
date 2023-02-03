@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import { container } from "tsyringe";
+
 import { EditIngredientUseCase } from "./EditIngredientUseCase";
 
 class EditIngredientController {
@@ -13,8 +14,8 @@ class EditIngredientController {
       id,
       name,
       description,
-      approximatedPrice
-    })
+      approximatedPrice,
+    });
 
     return res.status(200).json(ingredient);
   }
