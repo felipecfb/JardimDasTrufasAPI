@@ -1,6 +1,6 @@
 import { Ingredient } from "@database/entities/ingredient/Ingredient";
 import { IIngredientsRepository } from "@modules/ingredients/repositories/IIngredientsRepository";
-import { AppError } from "errors/AppError";
+import { AppError } from "shared/errors/AppError";
 import { inject, injectable } from "tsyringe";
 
 interface IRequest {

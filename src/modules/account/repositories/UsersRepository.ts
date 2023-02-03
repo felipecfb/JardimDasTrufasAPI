@@ -1,5 +1,5 @@
-import { AppDataSource } from "@database/data-source";
-import { User } from "@database/entities/account/User";
+import { AppDataSource } from "shared/infra/typeorm/database/data-source";
+import { User } from "shared/infra/typeorm/database/entities/account/User";
 import { Repository } from "typeorm";
 
 import { ICreateUserDTO } from "../dtos/ICreateUserDTO";

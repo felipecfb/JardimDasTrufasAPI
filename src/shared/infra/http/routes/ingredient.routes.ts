@@ -2,7 +2,7 @@ import { CreateIngredientController } from "@modules/ingredients/useCases/create
 import { EditIngredientController } from "@modules/ingredients/useCases/editIngredient/EditIngredientController";
 import { ListIngredientsController } from "@modules/ingredients/useCases/listIngredients/ListIngredientsController";
 import { Router } from "express";
-import { ensureAuthenticated } from "middlewares/ensureAuthenticated";
+import { ensureAuthenticated } from "shared/infra/http/middlewares/ensureAuthenticated";
 
 const ingredientRoutes = Router();
 

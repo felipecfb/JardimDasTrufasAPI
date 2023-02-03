@@ -1,5 +1,5 @@
-import { AppDataSource } from "@database/data-source";
-import { Ingredient } from "@database/entities/ingredient/Ingredient";
+import { AppDataSource } from "shared/infra/typeorm/database/data-source";
+import { Ingredient } from "shared/infra/typeorm/database/entities/ingredient/Ingredient";
 import { Repository } from "typeorm";
 
 import { ICreateIngredientDTO, IEditIngredientDTO } from "../dtos";

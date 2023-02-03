@@ -1,11 +1,10 @@
-import { AppDataSource } from "@database/data-source";
 import "express-async-errors";
-import { AppError } from "errors/AppError";
 import express, { NextFunction, Request, Response } from "express";
+import { AppError } from "shared/errors/AppError";
 
+import "../../container";
+import { AppDataSource } from "../typeorm/database/data-source";
 import { router } from "./routes";
-
-import "./container";
 
 const PORT = process.env.port || 3333;
 
