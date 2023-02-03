@@ -58,6 +58,12 @@ class IngredientsRepository implements IIngredientsRepository {
 
     return ingredient;
   }
+
+  async list(): Promise<Ingredient[]> {
+    const ingredients = await this.repository.find();
+
+    return ingredients;
+  }
 }
 
 export { IngredientsRepository };

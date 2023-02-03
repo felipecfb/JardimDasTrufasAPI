@@ -1,13 +1,6 @@
 import { Ingredient } from "@database/entities/ingredient/Ingredient";
 
-import { ICreateIngredientDTO } from "../dtos";
-
-interface IRequest {
-  id: string;
-  name: string;
-  description: string;
-  approximatedPrice: number;
-}
+import { ICreateIngredientDTO, IEditIngredientDTO } from "../dtos";
 
 interface IIngredientsRepository {
   create(data: ICreateIngredientDTO): Promise<Ingredient>;
@@ -18,7 +11,8 @@ interface IIngredientsRepository {
     name,
     description,
     approximatedPrice,
-  }: IRequest): Promise<Ingredient>;
+  }: IEditIngredientDTO): Promise<Ingredient>;
+  list(): Promise<Ingredient[]>;
 }
 
 export { IIngredientsRepository };

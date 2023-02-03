@@ -7,14 +7,6 @@ import {
 import { IIngredientsRepository } from "../IIngredientsRepository";
 
 class IngredientsRepositoryInMemory implements IIngredientsRepository {
-  update({
-    id,
-    name,
-    description,
-    approximatedPrice,
-  }: IEditIngredientDTO): Promise<Ingredient> {
-    throw new Error("Method not implemented.");
-  }
   ingredients: Ingredient[] = [];
 
   async create({
@@ -35,12 +27,25 @@ class IngredientsRepositoryInMemory implements IIngredientsRepository {
     return ingredient;
   }
 
+  async list(): Promise<Ingredient[]> {
+    throw new Error("Method not implemented.");
+  }
+
   async findByName(name: string): Promise<Ingredient> {
     return this.ingredients.find((ingredient) => ingredient.name === name);
   }
 
   async findById(id: string): Promise<Ingredient> {
     return this.ingredients.find((ingredient) => ingredient.id === id);
+  }
+
+  async update({
+    id,
+    name,
+    description,
+    approximatedPrice,
+  }: IEditIngredientDTO): Promise<Ingredient> {
+    throw new Error("Method not implemented.");
   }
 }
 
