@@ -1,12 +1,11 @@
 import { AppDataSource } from "@database/data-source";
+import "express-async-errors";
+import { AppError } from "errors/AppError";
 import express, { NextFunction, Request, Response } from "express";
 
 import { router } from "./routes";
 
 import "./container";
-import 'express-async-errors';
-
-import { AppError } from "errors/AppError";
 
 const PORT = process.env.port || 3333;
 
@@ -15,7 +14,6 @@ const HOSTNAME = process.env.HOSTNAME || "http://localhost";
 const app = express();
 
 app.use(express.json());
-
 
 app.use(router);
 
@@ -27,7 +25,7 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
   }
 
   return res.status(500).json({
-    status: 'error',
+    status: "error",
     message: `Internal server error - ${err.message}`,
   });
 });
@@ -38,10 +36,8 @@ app.listen(PORT, () => {
 
 AppDataSource.initialize()
   .then(() => {
+    console.log("🎉 Database connected!");
   })
   .catch((err) => {
     console.log(`Error - ${err}`);
-  })
-  .finally(() => {
-    console.log("🎉 Database connected!");
   });
